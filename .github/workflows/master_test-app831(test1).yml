@@ -1,5 +1,5 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
+# Docs for the Azure Web Apps Deploy action:
+# https://github.com/Azure/webapps-deploy
 
 name: Build and deploy ASP app to Azure Web App - test-app831
 
@@ -23,11 +23,11 @@ jobs:
         uses: microsoft/setup-msbuild@v1.0.2
 
       - name: Restore dependencies
-        run: dotnet restore BakeryTemplate/BakeryTemplate.csproj
+        run: dotnet restore ./BakeryTemplate.csproj
 
       - name: Build and Publish
         run: |
-          msbuild BakeryTemplate/BakeryTemplate.csproj `
+          msbuild ./BakeryTemplate.csproj `
             /p:Configuration=Release `
             /p:DeployOnBuild=true `
             /p:WebPublishMethod=FileSystem `
